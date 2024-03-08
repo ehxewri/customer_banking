@@ -158,4 +158,4 @@ cython_debug/
 
 # Including .pyc files (Python compiled bytecode files) in the .gitignore file is actually a 
 # common and recommended practice in many Python projects. 
-*.pyc
+__pycache__

@@ -20,7 +20,7 @@ def main():
     print('The future savings account balance after',savings_maturity,'months is: $', format(updated_savings_balance, ',.2f'))
 
     # Prompt the user to set the CD balance, interest rate, and months for the CD account.
-    cd_balance = float(input('What is your initial CD account balance? '))
+    cd_balance = float(input('\nWhat is your initial CD account balance? '))
     cd_interest = float(input('What is the APR for the CD account? '))
     cd_maturity = int(input('What is the length of months for your CD? '))
 
@@ -28,9 +28,12 @@ def main():
     updated_cd_balance, interest_earned = create_cd_account(cd_balance, cd_interest, cd_maturity)
 
     # Display the interest earned and updated CD account balance with interest earned for the given months.
-    print('The interest earned on the CD is: $', format(interest_earned, ',.2f'))
+    print('\nThe interest earned on the CD is: $', format(interest_earned, ',.2f'))
     print('The future CD account balance after',cd_maturity,'months is: $', format(updated_cd_balance, ',.2f'))
 
+def cs():
+    print("\033[H\033[J")    
 if __name__ == "__main__":
     # Call the main function.
+    cs()
     main()
