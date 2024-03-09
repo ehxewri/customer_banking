@@ -1,0 +1,8 @@
+# AI Bootcamp 
+## Challenge 3 
+
+## Introduction
+I have been to two military boot camps: an 8-week Army boot camp in Fort Dix, New Jersey, and a 13-week Marine Corps in Parris Island. Both experiences shaped the rest of my life. I gained more than the tools and skills needed to be a soldier. The time and the environment reshaped my thinking and prepared me for a new life moving forward. I was an enhanced version of the person I had been. I had new direction and purpose in my life. It's been 35 years, and I find myself facing a new beginning again. My kids are grown. I outgrew my wife. My career in networking and security is quickly disappearing from the landscape, being replaced by AI and bots faster than anyone can project. This leaves me with an uncertain future in a rapidly changing world and no clear direction forward. My last adventure in a startup company in Silicon Valley made me acutely aware of the gaps. It's my hope that this AI/ML boot camp class at SMU will be the beginning of a new chapter in my life. This is more than a class to learn about Artificial Intelligence and Machine Learning. It's more than learning Python and a host of packages to support me in a new job. It's about shaping my future in a new world being shaped by AI.
+
+## How to get started
+Like most really good things in life i did not completely plan to do a bootcamp at age 58 to learn something completely new. I was unemplyoyed, looking at all the opprotunities for someone with my very extensive skill and background that met my long term goals. 
