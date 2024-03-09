@@ -2,9 +2,17 @@
 from Account import Account
 # import addional packages to support formating
 from rich.console import Console
+import argparse
 console = Console()
 console.clear()
-
+# Create the parser
+parser = argparse.ArgumentParser(description='Get account names')
+# Add an argument to collect keywords into a list
+# nargs='*' tells argparse to collect all positional arguments in a list
+parser.add_argument('keywords', nargs='*', help='List of keywords')
+# Parse the arguments
+args = parser.parse_args()
+# args.keywords will contain the list of keywords
 # Define the main function
 def main(account_list):
     # instanciate my_account from Accounts class    
@@ -30,7 +38,11 @@ def main(account_list):
         my_account.print_updated_balance()
 
 if __name__ == "__main__":
-    # set the account list to the accounts you ant to start. I added an extra one. the idea is to have everything passed to the main function
-    account_list=['Savings','CD','Checking']
+    # set the account list to the accounts you want to start. 
+    # If accounts are not passed when the program is started it will default to savigns and cd
+    if len(args.keywords) > 0:
+        account_list=args.keywords
+    else: 
+        account_list=['Savings','CD']
     # Call the main function.
     main(account_list)
