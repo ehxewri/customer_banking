@@ -9,14 +9,14 @@ class Account:
     # This method sets the balance of the account.
     def set_balance(self, balance, interest_earned):
         """Sets the balance for the for the account"""
-        balance = balance + interest_earned
-        return balance
+        self.balance = balance + interest_earned
+        return self.balance
 
     # The method sets the interest gained for the account.
     def set_interest(self, balance,interest_rate,length_of_deposit):
         """Sets the interest gained for the the account"""
-        interest_earned = (balance*(interest_rate/100/12)*length_of_deposit)
-        return interest_earned
+        self.interest_earned = (balance*(interest_rate/100/12)*length_of_deposit)
+        return self.interest_earned
 
 class Account_Types:
     def __init__(self,accounts):

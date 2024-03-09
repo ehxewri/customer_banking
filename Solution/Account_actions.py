@@ -24,10 +24,10 @@ def account_accrual(starting_balance, interest_rate, length_of_deposit):
     my_account = Account(starting_balance,0)
 
     # Calculate interest earned0
-    interest_earned = my_account.set_interest(my_account.balance,interest_rate,length_of_deposit)
+    my_account.set_interest(my_account.balance,interest_rate,length_of_deposit)
 
     # Update the savings account balance by adding the interest earned
-    new_balance     = my_account.set_balance(my_account.balance,my_account.interest_earned)
+    my_account.set_balance(my_account.balance,my_account.interest_earned)
 
     # Return the updated balance and interest earned.
-    return new_balance, interest_earned 
+    return my_account.balance, my_account.interest_earned 
