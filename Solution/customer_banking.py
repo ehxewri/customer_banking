@@ -1,41 +1,30 @@
-# Import the create_cd_account and create_savings_account functions
-# ADD YOUR CODE HERE
-from savings_account import create_savings_account
-from cd_account import create_cd_account
-
+# Import the account_Accrual and account_input from Account_action
+from Account_actions import account_input, account_accrual
+from Account import Account_types
+# import addional packages to support formating
+from rich.console import Console
+console = Console()
+console.clear()
 # Define the main function
 def main():
-    """This function prompts the user to enter the savings and cd account balance, interest rate,
-    and the length of months to determine the interest gained.
-    It displays the interest earned on the savings and CD accounts and updates the balances.
-    """
-    # Prompt the user to set the savings balance, interest rate, and months for the savings account.
-    # ADD YOUR CODE HERE
+    """this funtiongets the account types for savings and cd (uses account type class)
+        for each account 
+            get account_input
+            caculate account accrual and new balance (uses accout class- think of better descriptive name)
+            print account accrual and new balance
+    """ 
+    my_accounts=Account_types()
 
-    savings_balance = 1000
-    savings_interest = 5
-    savings_maturity = 24
-    
-    # Call the create_savings_account function and pass the variables from the user.
-    updated_savings_balance, savings_interest_earned = create_savings_account(savings_balance, savings_interest, savings_maturity)
+    print (my_accounts) 
 
-    # Print out the interest earned and updated savings account balance with interest earned for the given months.
-    # ADD YOUR CODE HERE
+    for account in my_accounts:
+        # Prompt the user to set the savings balance, interest rate, and months for the savings account.
+        starting_balance, interest_rate, length_of_deposit = account_input(account)
+        # Call the create_savings_account function and pass the variables from the user.
+        updated_balance, interest_earned = account_accrual(starting_balance, interest_rate, length_of_deposit)
+        print (f'\nYour {account} account interest at maturity for {length_of_deposit} months is {interest_earned}')
+        print (f'\nYour new {account} balance will be {updated_balance}\n')
 
-    # Prompt the user to set the CD balance, interest rate, and months for the CD account.
-    # ADD YOUR CODE HERE
-    cd_balance = 10000
-    cd_interest = .00407
-    cd_maturity = 24
-    # Call the create_cd_account function and pass the variables from the user.
-    # updated_cd_balance, cd_interest_earned = create_cd_account(cd_balance, cd_interest, cd_maturity)
-
-    update_cd_balance = 2
-    cd_interest_earned = 3
-
-    # Print out the interest earned and updated CD account balance with interest earned for the given months.
-    # ADD YOUR CODE HERE
-    print (updated_savings_balance,savings_interest_earned,update_cd_balance,cd_interest_earned)
 if __name__ == "__main__":
     # Call the main function.
     main()

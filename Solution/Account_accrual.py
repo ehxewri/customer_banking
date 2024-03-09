@@ -2,7 +2,7 @@
 from Account import Account
 
 # Define a function for the Savings Account
-def create_savings_account(balance, interest_rate, months):
+def account_accrual(balance, interest_rate, months):
     """Creates a savings account, calculates interest earned, and updates the account balance.
 
     Args:
