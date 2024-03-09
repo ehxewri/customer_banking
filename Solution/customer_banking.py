@@ -1,6 +1,6 @@
 # Import the account_Accrual and account_input from Account_action
 from Account_actions import account_input, account_accrual
-from Account import Account_types
+from Account import Account, Account_Types
 # import addional packages to support formating
 from rich.console import Console
 console = Console()
@@ -13,11 +13,9 @@ def main():
             caculate account accrual and new balance (uses accout class- think of better descriptive name)
             print account accrual and new balance
     """ 
-    my_accounts=Account_types()
-
-    print (my_accounts) 
-
-    for account in my_accounts:
+    my_accounts=Account_Types(['Savings','CD'])
+    for account in my_accounts.accounts:
+        # initialize new account 
         # Prompt the user to set the savings balance, interest rate, and months for the savings account.
         starting_balance, interest_rate, length_of_deposit = account_input(account)
         # Call the create_savings_account function and pass the variables from the user.

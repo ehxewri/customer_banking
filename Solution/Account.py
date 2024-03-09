@@ -18,10 +18,6 @@ class Account:
         interest_earned = (balance*(interest_rate/100/12)*length_of_deposit)
         return interest_earned
 
-class Account_types:
-    def __init__(self,account_types):
-        self.account_types = account_types
-
-    def accounts(self):
-        self.account_types = ('Saving','CD')
-        return self.account_types
+class Account_Types:
+    def __init__(self,accounts):
+        self.accounts = accounts
