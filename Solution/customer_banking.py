@@ -1,12 +1,17 @@
 # import Accounts and Account class from Account
 from Account import Account
+
 # import addional packages to support formating
 from rich.console import Console
+
 import argparse
+# Create Clear Console
 console = Console()
 console.clear()
+# set currency 
+# locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 # Create the parser
-parser = argparse.ArgumentParser(description='Get account names')
+parser = argparse.ArgumentParser(description='add account names\n one space between names\nno spaces in the name\nno special characters')
 # Add an argument to collect keywords into a list
 # nargs='*' tells argparse to collect all positional arguments in a list
 parser.add_argument('keywords', nargs='*', help='List of keywords')
@@ -28,7 +33,8 @@ def main(account_list):
         my_account=Account(account)
         # Prompt the user to set the savings balance, interest rate, and months for the savings account.
         my_account.get_account_info()
-        # Calculate Interest accrued 
+        # Calculate Interest accrued
+        console.clear() 
         my_account.calc_accrued()
         # update the account balance
         my_account.update_balance()
