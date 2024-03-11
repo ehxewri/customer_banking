@@ -1,4 +1,5 @@
 from prompt_toolkit.validation import Validator, ValidationError
+from prompt_toolkit import prompt
 import re
 
 class CurrencyValidator(Validator):
@@ -25,19 +26,6 @@ class InterestRateValidator(Validator):
                 cursor_position=len(text)
             )
 
-class FloatValidator(Validator):
-    """
-    Validates that the input is a valid float.
-    """
-    def validate(self, document):
-        text = document.text
-        try:
-            float(text)
-        except ValueError:
-            raise ValidationError(
-                message="This input is not a valid number",
-                cursor_position=len(text)
-            )
 
 class IntValidator(Validator):
     """
@@ -64,3 +52,12 @@ class EnterValidator(Validator):
                 message="Press enter to continue",
                 cursor_position=len(text)
             )
+if __name__ == "__main__":
+    currency=float(prompt(f'\nPlease enter currency in dollars and cents: $ ', validator=CurrencyValidator()))
+    print (type(currency))
+    percentage=(prompt(f'Please enter interest rate upto .000 (%): ', validator=InterestRateValidator()))
+    print (type(percentage))
+    wholenumber = (prompt(f'Please enter a whole number: ', validator=IntValidator()))
+    print (type(wholenumber))
+    prompt (f'press Enter : ', validator=EnterValidator())
+    

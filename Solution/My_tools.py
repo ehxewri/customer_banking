@@ -8,3 +8,6 @@ def pause(pause_message):
 def clear():
     console = Console()
     console.clear()
+if __name__ == "__main__":
+    pause('im a test of the pause. just press enter : ')
+    clear()
